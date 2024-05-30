@@ -1,17 +1,11 @@
+
 #include "libftprintf.h"
-int ft_printf(char *s, ...)
+
+int ft_printf(char *format, ...)
 {
 	va_list	ap;
 	int	i;
 	char	args;
-
-	args = s;
-	va_start(ap, s);
-	while(args)
-	{
-		i++;
-		args ++;
-	}
 }
 
 // %c Prints a single character.
