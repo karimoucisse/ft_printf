@@ -9,7 +9,7 @@ typedef struct T_FORMAT
 	char	*arg;
 }t_format;
 
-int ft_printf(const char *, ...);
+int	ft_handle_format(char	format, char	*arg);
 
 #endif
 

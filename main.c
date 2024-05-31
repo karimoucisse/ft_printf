@@ -1,6 +1,6 @@
-#include "libftprintf.h"
+#include "headers/main.h"
 
 int main()
 {
-	ft_printf("HELLO %s world%%", "vvv", "ffrf", "ferf", "vv");
+	ft_printf("HELLO %s world%c", "vvv", "ffrf", "ferf", "vv");
 }

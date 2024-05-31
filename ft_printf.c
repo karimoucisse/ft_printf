@@ -1,28 +1,45 @@
 
 #include "./libft/libft.h"
+#include "./headers/libftprintf.h"
 
 int ft_printf(char *format, ...)
 {
 	va_list	args;
 	int		i;
+	int		j;
 	int		len;
+	char *str_args;
 
 	i = 0;
 	len = 0;
+	j = 0;
 	while(format[i])
 	{
 		if(format[i] == '%' && format[i + 1] != '%')
 			len++;
 		i++;
 	}
+	i = 0;
+	str_args = malloc(sizeof(char) * (len + 1));
+	while(format[i])
+	{
+		if(format[i + 1] && format[i] == '%')
+		{
+			str_args[j] = format[i + 1];
+			j++;
+		}
+		i++;
+	}
+	str_args[j] = '\0';
+	i = 0;
 	if(len)
 	{
 		va_start(args, format);
-		while (len > 0)
+		while (i < len)
 		{
-			char *value = va_arg(args, char *);
-			printf("s= %s\n", value);
-			len--;
+			// char *value = va_arg(args, char *);
+			ft_handle_format(str_args[i], va_arg(args, char *));
+			i++;
 		}
 		va_end(args);
 	}
