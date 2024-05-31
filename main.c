@@ -2,5 +2,5 @@
 
 int main()
 {
-	ft_printf("HELLO world", 0);
+	ft_printf("HELLO world", "vvv", "ffrf", "ferf", "vv");
 }

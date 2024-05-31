@@ -1,11 +1,25 @@
 
-#include "libftprintf.h"
+// #include "libftprintf.h"
+#include "libft.h"
 
 int ft_printf(char *format, ...)
 {
 	va_list	ap;
-	int	i;
-	char	args;
+	int	nb_args;
+	char	*cur_arg;
+
+	nb_args = 0;
+	cur_arg = format;
+	va_start(ap, format);
+	while(cur_arg)
+	{
+		nb_args++;
+		cur_arg = va_arg(ap, char *);
+	}
+
+	printf("%s\n", format);
+	va_end(ap);
+	return 0;
 }
 
 // %c Prints a single character.
