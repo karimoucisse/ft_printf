@@ -1,24 +1,33 @@
 
-// #include "libftprintf.h"
-#include "libft.h"
+#include "./libft/libft.h"
 
 int ft_printf(char *format, ...)
 {
-	va_list	ap;
-	int	nb_args;
-	char	*cur_arg;
+	va_list	args;
+	int		i;
+	int		len;
 
-	nb_args = 0;
-	cur_arg = format;
-	va_start(ap, format);
-	while(cur_arg)
+	i = 0;
+	len = 0;
+	while(format[i])
 	{
-		nb_args++;
-		cur_arg = va_arg(ap, char *);
+		if(format[i] == '%' && format[i + 1] != '%')
+			len++;
+		i++;
 	}
-
-	printf("%s\n", format);
-	va_end(ap);
+	if(len)
+	{
+		va_start(args, format);
+		while (len > 0)
+		{
+			char *value = va_arg(args, char *);
+			printf("s= %s\n", value);
+			len--;
+		}
+		va_end(args);
+	}
+	else
+		printf("%s", format);
 	return 0;
 }
 

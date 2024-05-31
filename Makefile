@@ -2,7 +2,7 @@ NAME = libftprintf.a
 CC = cc
 SRC = ./srcs
 HEADER = ./headers
-FLAGS = -Wall -Werro -Wextra
+FLAGS = -Wall -Werro -Wextra -I.
 OFILES = $(CFILES:.c=.o)
 CFILES = main.c ft_printf.c
 RM = rm -f
