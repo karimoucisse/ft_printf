@@ -2,6 +2,8 @@
 #include "./includes/libft.h"
 int main()
 {
-	char s1[10] = 
-	ft_printf("HELLO %s world%c", "vvv", "ffrf", "ferf", "vv");
+	char s1[] = "Karimou";
+	char s2[] = "Cisse";
+	char c = 'w';
+	ft_printf("HELLO %s %s aaa!%c", s1, s2, c);
 }
